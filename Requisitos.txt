@@ -5,3 +5,4 @@ local para a criação do software
 software
 sensores
 backup
+software deve ser leve
