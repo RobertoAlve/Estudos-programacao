@@ -1,0 +1,44 @@
+body {
+    background-color: gray;
+    height: 100vh;
+    background-image: url(/img/numeros.jpg);
+}
+
+.pri {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal{
+    width: 70%;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:black;
+    color: white;
+    opacity: 0.9;
+}
+
+.input_numero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+}
+
+.input_numero input {
+    width: 400px;
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}

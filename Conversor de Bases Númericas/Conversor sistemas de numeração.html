@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Bases Numéricas</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="pri">
+        <div class="principal">
+            <div class="titulo">
+                <h2>Conversor de Bases Numéricas</h2>
+            </div>
+            <div class="input_numero">
+                <br><br>Número Decimal: <input id="numero_decimal">
+                <br><br>Número Hexadecimal: <input disabled id="numero_hexadecimal">
+                <br><br>Número Octal: <input disabled id="numero_octal">
+                <br><br>Número Binário: <input disabled id="numero_binario">
+            </div>
+            <div class="botao">
+                <br><br><button onclick="converterDecimal()">Converter Número Decimal</button>
+            </div>
+            <div class="titulo">
+                <h2>Obrigado por usar nosso Sistema</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function converterDecimal() {        
+        var decimal = Number(numero_decimal.value); 
+
+        var decimalO = decimal.toString(8);
+        var decimalH = decimal.toString(16);
+        var decimalB = decimal.toString(2);
+
+
+        numero_octal.value = decimalO;
+        numero_hexadecimal.value = decimalH;
+        numero_binario.value = decimalB;
+
+    }
+
+
+</script>
