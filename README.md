@@ -1,2 +1,2 @@
-# Bacchus-Digital
-Esse é o repositório do projeto do primeiro ano do curso de CCO da Faculdade BandTec
+# Aprendendo a programar
+Esse é o repositório dos meus testes e aprendizagem de códigos.
