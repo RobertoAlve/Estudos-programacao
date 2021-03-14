@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+}
+
+.principal{
+    height: 85vh;
+}
+
+.titulo{
+    width: 100%;
+    height: 5h;
+    display: block;
+    text-align: center;
+    background-color: white;
+}
+
+.caixa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#horas{
+    width: 50vh;
+    text-align: center;
+    background-color: white;
+    font-size: 100px;
+    border-radius: 20px;
+}

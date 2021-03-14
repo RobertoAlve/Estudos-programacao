@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <link rel="stylesheet" href="./estilo/style.css">
+</head>
+
+<body>
+
+    <div class="principal">
+        <div class="titulo">
+            <h1>Relógio</h1>
+        </div>
+
+        <div class="caixa">
+            <div id="horas">
+                <h2></h2>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    var qHoras = 0;
+    var minutos = 0;
+    var segundos = 0;
+
+    var interval;
+
+    horas.innerHTML = `${qHoras}:${minutos}:${segundos}`;
+
+    interval = setInterval(function relogio() {
+
+        if (qHoras > 23) {
+            qHoras = 0;
+            minutos = 0;
+            segundos = 0;
+
+        }
+
+        if (minutos > 59) {
+            qHoras++;
+            minutos = 0;
+            segundos = 0;
+
+        }
+
+        if (segundos < 59) {
+            segundos++
+
+        } else {
+            minutos++;
+            segundos = 0;
+        }
+
+        horas.innerHTML = `${qHoras}:${minutos}:${segundos}`;
+    }, 1000)
+
+</script>
