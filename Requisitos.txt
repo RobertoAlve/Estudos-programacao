@@ -1,8 +1,0 @@
-Banco de dados
-conexão com a internet
-site
-local para a criação do software
-software
-sensores
-backup
-software deve ser leve
