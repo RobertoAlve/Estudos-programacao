@@ -1,7 +1,10 @@
 body {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
     background-color: gray;
     height: 100vh;
-    background-image: url(/img/numeros.jpg);
+    background-image: url(../img/numeros.jpg);
 }
 
 .pri {
@@ -13,6 +16,7 @@ body {
 
 .principal{
     width: 70%;
+    min-width: 500px;
 }
 
 .titulo{
