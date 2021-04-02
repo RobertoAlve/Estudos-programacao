@@ -8,19 +8,17 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="pri">
+    <div class="global">
         <div class="principal">
             <div class="titulo">
                 <h2>Conversor de Bases Numéricas</h2>
             </div>
             <div class="input_numero">
-                <br><br>Número Decimal: <input id="numero_decimal">
-                <br><br>Número Hexadecimal: <input disabled id="numero_hexadecimal">
-                <br><br>Número Octal: <input disabled id="numero_octal">
-                <br><br>Número Binário: <input disabled id="numero_binario">
-            </div>
-            <div class="botao">
-                <br><br><button onclick="converterDecimal()">Converter Número Decimal</button>
+                <br><br>Número Decimal: <input id="numero_decimal" type="number" onkeyup="converterDecimal()">
+                <br><br>Número Hexadecimal: <input id="numero_hexadecimal" onkeyup="converterHexadecimal()">
+                <br><br>Número Octal: <input id="numero_octal" type="number" onkeyup="converterOctal()">
+                <br><br>Número Binário: <input id="numero_binario" type="number" onkeyup="converterBinario()">
+                <br><br>
             </div>
             <div class="titulo">
                 <h2>Obrigado por usar nosso Sistema</h2>
@@ -31,18 +29,92 @@
 </html>
 
 <script>
+
     function converterDecimal() {        
-        var decimal = Number(numero_decimal.value); 
+        let decimal = Number(numero_decimal.value); 
 
-        var decimalO = decimal.toString(8);
-        var decimalH = decimal.toString(16);
-        var decimalB = decimal.toString(2);
-
+        let decimalO = decimal.toString(8);
+        let decimalH = decimal.toString(16).toUpperCase();
+        let decimalB = decimal.toString(2);
 
         numero_octal.value = decimalO;
         numero_hexadecimal.value = decimalH;
         numero_binario.value = decimalB;
 
+        if (decimal > 999999999999) {
+            alert("Número excede o permitido!");
+
+            numero_octal.value = "";
+            numero_hexadecimal.value = "";
+            numero_binario.value = "";
+            numero_decimal.value = "";
+        }
+    }
+
+    function converterHexadecimal() {
+        let hexadecimal = numero_hexadecimal.value;
+
+        let hexadecimalM = parseInt(hexadecimal, 16);
+        let binario = hexadecimalM.toString(2);
+        let octal = hexadecimalM.toString(8);
+        let decimal = hexadecimalM.toString(10);
+
+        numero_octal.value = octal;
+        numero_decimal.value = decimal;
+        numero_binario.value = binario;
+
+        if (hexadecimal > 999999999999) {
+            alert("Número excede o permitido!");
+
+            numero_octal.value = "";
+            numero_hexadecimal.value = "";
+            numero_binario.value = "";
+            numero_decimal.value = "";
+        }
+    }
+
+    function converterOctal() {
+        let octal = Number(numero_octal.value);
+
+        let octalM = parseInt(octal, 8);
+        let decimal = octalM.toString(10);
+        let binario = octalM.toString(2);
+        let hexadecimal = octalM.toString(16).toUpperCase();
+
+        numero_decimal.value =  decimal;
+        numero_hexadecimal.value = hexadecimal;
+        numero_binario.value = binario;
+
+        if (octal > 999999999999) {
+            alert("Número excede o permitido!");
+
+            numero_octal.value = "";
+            numero_hexadecimal.value = "";
+            numero_binario.value = "";
+            numero_decimal.value = "";
+        }
+    }
+
+    function converterBinario() {
+        let binario = Number(numero_binario.value);
+
+        let binarioM = parseInt(binario, 2);
+        let decimal = binarioM.toString(10);
+        let hexadecimal = binarioM.toString(16).toUpperCase();
+        let octal = binarioM.toString(8);
+
+        numero_octal.value = octal;
+        numero_hexadecimal.value = hexadecimal;
+        numero_decimal.value = decimal;
+
+        if (binario > 999999999999999999999999999999) {
+            alert("Número excede o permitido!");
+
+            numero_octal.value = "";
+            numero_hexadecimal.value = "";
+            numero_binario.value = "";
+            numero_decimal.value = "";
+        }
     }
 
 
